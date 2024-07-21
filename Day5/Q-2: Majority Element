@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int repeat=1;
+        int maxi=nums[0];
+
+        for(int i=1;i<nums.size();i++){
+            if(repeat==0){
+                maxi=nums[i];
+            }
+            if(nums[i]==maxi){
+                repeat++;
+            }
+            else{
+                repeat--;
+            }
+        }
+        
+        return maxi;
+    }
+};
